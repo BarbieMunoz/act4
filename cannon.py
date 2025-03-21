@@ -72,9 +72,11 @@ def move():
 
     draw()
 
+    #Reset position if target goes out of screen
     for target in targets:
         if not inside(target):
-            return
+            target.x = 200
+
 
     ontimer(move, 50)
 
