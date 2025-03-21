@@ -14,7 +14,7 @@ from turtle import *
 from freegames import vector
 
 ball = vector(-200, -200)
-speed = vector(0, 0)
+speed = vector(0,0)
 targets = []
 
 
@@ -23,8 +23,9 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        # cambié de 25 a 10 para que vaya más rápido
+        speed.x = (x + 200) / 10
+        speed.y = (y + 200) / 10
 
 
 def inside(xy):
@@ -55,7 +56,8 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        # cambio de 0.5 a 1 para que vayan mas rapido
+        target.x -= 1
 
     if inside(ball):
         speed.y -= 0.35
